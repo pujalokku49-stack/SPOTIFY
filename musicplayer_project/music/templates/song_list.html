@@ -1,0 +1,15 @@
+<h2>Music Player</h2>
+{% for song in songs %}
+   <div>
+    <h4>{{ song.title }} -
+{{ song.artist }}</h4>
+    <audio controls>
+        <source
+src="{{ song.audio_file.url }}"
+type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+   </div>
+{% empty %}
+  <p>No songs available.</p>
+{% endfor %}
